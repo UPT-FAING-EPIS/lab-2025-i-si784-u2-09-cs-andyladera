@@ -1,14 +1,15 @@
 using Bank.Domain;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
+
 namespace Bank.Domain.Tests.Features
 {
     [Binding]
     public sealed class CuentaAhorroPruebas
     {
         private readonly ScenarioContext _scenarioContext;
-        private CuentaAhorro _cuenta { get; set; }
-        private string _error { get; set; }
+        private CuentaAhorro _cuenta { get; set; } = null!;
+        private string _error { get; set; } = string.Empty;
         private bool _es_error { get; set; } = false;
         
         public CuentaAhorroPruebas(ScenarioContext scenarioContext)
@@ -70,19 +71,22 @@ namespace Bank.Domain.Tests.Features
         [Then("el saldo nuevo deberia ser (.*)")]
         public void EntoncesElResultadoDeberiaSer(decimal resultado)
         {
-            Assert.AreEqual(_cuenta.Saldo, resultado);
+            // NUnit 4.x sintaxis moderna
+            Assert.That(_cuenta.Saldo, Is.EqualTo(resultado));
         }        
 
         [Then("deberia ser error")]
         public void EntoncesDeberiaMostrarseError()
         {
-            Assert.IsTrue(_es_error);
+            // NUnit 4.x sintaxis moderna
+            Assert.That(_es_error, Is.True);
         }
 
         [Then("deberia mostrarse el error: (.*)")]
         public void EntoncesDeberiaMostrarseError(string error)
         {
-            Assert.AreEqual(_error, error);
+            // NUnit 4.x sintaxis moderna
+            Assert.That(_error, Is.EqualTo(error));
         }
     }
 }

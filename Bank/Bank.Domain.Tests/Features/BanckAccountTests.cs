@@ -68,6 +68,20 @@ namespace Bank.Domain.Tests.Features
             }
         }
 
+        [When("cancelo la cuenta")]
+        public void CuandoYoCanceloLaCuenta()
+        {
+            try
+            {
+                _cuenta.Cancelar();
+            }
+            catch (System.Exception ex)
+            {
+                _es_error = true; 
+                _error = ex.Message;
+            }
+        }
+
         [Then("el saldo nuevo deberia ser (.*)")]
         public void EntoncesElResultadoDeberiaSer(decimal resultado)
         {
@@ -87,6 +101,12 @@ namespace Bank.Domain.Tests.Features
         {
             // NUnit 4.x sintaxis moderna
             Assert.That(_error, Is.EqualTo(error));
+        }
+
+        [Then("la cuenta deberia estar cancelada")]
+        public void EntoncesLaCuentaDeberiaEstarCancelada()
+        {
+            Assert.That(_cuenta.Estado, Is.False);
         }
     }
 }

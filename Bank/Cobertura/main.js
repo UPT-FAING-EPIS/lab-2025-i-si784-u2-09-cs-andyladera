@@ -214,7 +214,7 @@ var assemblies = [
     "name": "Bank.Domain",
     "classes": [
       { "name": "Bank.Domain.Cliente", "rp": "Bank.Domain_Cliente.html", "cl": 7, "ucl": 0, "cal": 7, "tl": 14, "cb": 0, "tb": 0, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
-      { "name": "Bank.Domain.CuentaAhorro", "rp": "Bank.Domain_CuentaAhorro.html", "cl": 24, "ucl": 4, "cal": 28, "tl": 39, "cb": 3, "tb": 4, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
+      { "name": "Bank.Domain.CuentaAhorro", "rp": "Bank.Domain_CuentaAhorro.html", "cl": 36, "ucl": 5, "cal": 41, "tl": 59, "cb": 8, "tb": 12, "cm": 0, "fcm": 0, "tm": 0, "lch": [], "bch": [], "mch": [], "mfch": [], "hc": [], "metrics": { } },
     ]},
 ];
 
